@@ -1,0 +1,1 @@
+FunctionResponse({ abiding: glob.abiding, globSize: _.size(glob) });

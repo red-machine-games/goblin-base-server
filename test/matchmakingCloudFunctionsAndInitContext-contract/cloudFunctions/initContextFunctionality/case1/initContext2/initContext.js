@@ -1,0 +1,1 @@
+defineGlobal('little', 'example');

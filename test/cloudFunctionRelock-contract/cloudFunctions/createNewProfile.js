@@ -1,0 +1,1 @@
+CreateNewProfileResponse({ profileData: { bike: 'spy' } });

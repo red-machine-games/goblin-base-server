@@ -1,0 +1,71 @@
+{
+  "name": "goblin-base-server",
+  "version": "0.1.0",
+  "description": "Goblin Base Server",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --timeout 60000 ./test/testEntryPoint.js"
+  },
+  "author": "Andrew Medvedev <andrew.medvedev.nh@gmail.com>",
+  "bugs": {
+    "url": "https://github.com/red-machine-games/goblin-base-server/issues"
+  },
+  "homepage": "https://gbase.tech/",
+  "license": "GNU GPLv3",
+  "engines": {
+    "node": ">=9.11.1"
+  },
+  "dependencies": {
+    "amp": "0.3.1",
+    "assert": "2.0.0",
+    "async": "3.1.0",
+    "bson-ext": "2.0.3",
+    "bufferutil": "4.0.1",
+    "check-engine": "1.8.1",
+    "clone": "2.1.2",
+    "clone-deep": "4.0.1",
+    "crc-32": "1.2.0",
+    "elo-rank": "1.0.3",
+    "express-basic-auth": "1.2.0",
+    "faker": "4.1.0",
+    "fast-deep-equal": "2.0.1",
+    "fastify": "2.10.0",
+    "fastify-cors": "2.1.3",
+    "fastify-formbody": "3.1.0",
+    "fastify-helmet": "3.0.2",
+    "in-app-purchase": "1.11.4",
+    "ip": "1.1.5",
+    "ip-regex": "4.1.0",
+    "joi": "14.3.1",
+    "jsonpack": "1.1.5",
+    "jssha": "2.3.1",
+    "lodash": "4.17.15",
+    "lynx": "0.2.0",
+    "mersennetwister": "0.2.3",
+    "mongodb": "3.3.3",
+    "murmurhash": "0.0.2",
+    "object-path": "0.11.4",
+    "pm2": "4.1.2",
+    "querystring": "0.2.0",
+    "redis": "2.8.0",
+    "request": "2.88.0",
+    "shelljs": "0.8.3",
+    "stable": "0.1.8",
+    "toobusy-js": "0.5.1",
+    "traverse": "0.6.6",
+    "type-is": "1.6.18",
+    "utf-8-validate": "5.0.2",
+    "ws": "7.2.0"
+  },
+  "devDependencies": {
+    "chai": "4.2.0",
+    "mocha": "6.2.2"
+  },
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/red-machine-games/goblin-base-server.git"
+  }
+}

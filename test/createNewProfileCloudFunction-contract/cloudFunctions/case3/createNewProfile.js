@@ -1,0 +1,1 @@
+CreateNewProfileResponse({ profileData: { maze: { curriculum: 1, inappropriate: 2 }, hello: { 'world': 1 } } });

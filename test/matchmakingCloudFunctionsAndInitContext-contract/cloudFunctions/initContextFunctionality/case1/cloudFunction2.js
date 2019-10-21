@@ -1,0 +1,1 @@
+FunctionResponse({ little: glob.little, globSize: _.size(glob) });

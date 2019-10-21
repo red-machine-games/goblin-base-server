@@ -1,0 +1,1 @@
+CreateNewProfileResponse({ profileData: { cancel: 'contemporary' } });

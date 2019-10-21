@@ -1,0 +1,1 @@
+defineGlobal('abiding', 'discussion');

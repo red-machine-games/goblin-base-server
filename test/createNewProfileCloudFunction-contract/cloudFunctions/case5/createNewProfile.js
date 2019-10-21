@@ -1,0 +1,1 @@
+CreateNewProfileResponse({ mmr: 1, wlRate: 2 });

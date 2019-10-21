@@ -1,0 +1,1 @@
+FunctionResponse({ ver: await getProfileNode('ver'), mutationsCount: await getProfileNode('profileData.mutationsCount') });

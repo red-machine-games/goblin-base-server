@@ -1,0 +1,1 @@
+FunctionResponse({ theVal: glob.theVal });

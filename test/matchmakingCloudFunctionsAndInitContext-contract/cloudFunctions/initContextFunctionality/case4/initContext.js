@@ -1,0 +1,1 @@
+defineGlobal('theObj', { theVal: 1 });

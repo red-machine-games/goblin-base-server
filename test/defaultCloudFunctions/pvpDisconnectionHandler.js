@@ -1,0 +1,1 @@
+PvpDisconnectionHandler('GR: opponent disconnected');
