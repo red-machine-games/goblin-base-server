@@ -63,7 +63,12 @@ end
 local metrics_lock = redis.call('get', 'metrics_lock')
 if not metrics_lock then
     redis.call('set', 'metrics_lock', '1', 'px', LOCK_LIFETIME)
-    return websockets_count_to_return .. ';' .. redis.call('get', 'the_occupation') .. ';' .. pidnx_to_return .. ';' .. average_lag_to_return
+    local the_occupation = redis.call('get', 'the_occupation')
+    if the_occupation then
+        return websockets_count_to_return .. ';' .. the_occupation .. ';' .. pidnx_to_return .. ';' .. average_lag_to_return
+    else
+        return nil
+    end
 else
     return nil
 end

@@ -465,10 +465,10 @@ describe('The cases', () => {
             };
 
             var seq = 2,
-                sign = `/v0/releaseBooking${seq}${bookingKey1}default`,
+                sign = `/api/v0/releaseBooking${seq}${bookingKey1}default`,
                 hmacSign = crypto.createHash('sha256').update(Buffer.from(sign), 'binary').digest('hex');
             request.post({
-                url: `http://${gameroomHost}:${gameroomPort}/v0/releaseBooking`,
+                url: `http://${gameroomHost}:${gameroomPort}/api/v0/releaseBooking`,
                 headers: {
                     'x-platform-version': _PLATFORM_VERSION,
                     'x-book-key': bookingKey1,

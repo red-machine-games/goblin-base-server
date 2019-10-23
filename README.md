@@ -27,7 +27,7 @@ Here are some theses to help you understand Goblin Base Server better:
 Find out more here: https://gbase.tech/
 
 # Early access note :pencil:
-Right now Goblin Tech Stack is in alpha version (early access) and not feature-complete - some strings here will be noted as (WIP). Check out our roadmap to discover interesting things: https://trello.com/b/hYzA4kz1/goblin-base-server-roadman
+Right now Goblin Tech Stack is in alpha version (early access) and not feature-complete - some strings here will be noted as (WIP). Check out our roadmap to discover interesting things: https://github.com/orgs/red-machine-games/projects/1
 
 # What is Goblin Tech Stack
 It's a set of tools: a Server, a set of client SDKs (WIP), a clustered benchmark tool and deployment & cluster orchestration & any dev ops tool (WIP). In conjunction they form a rich stack to make & operate high load clouds and get hard problems done with casual javascript.
@@ -117,9 +117,6 @@ Head to the doc to find out more: https://gbase.tech/doc/api/cloudFunctions/
 
 ## Deploy on Digital Ocean
 Instance of Goblin Base Server can be easily deployed from Digital Ocean's marketplace: [Stay tuned](https://www.digitalocean.com/)
-
-## Deploy on Heroku
-Instance of Goblin Base Server can be easily deployed from Heroku: [Stay tuned](https://www.heroku.com/)
 
 ## Working from client
 To make work with the Server easy enough to not mess with networking and backend infrastructure stuff we keep client-side SDKs that incapsulates as much complicated things as possible:

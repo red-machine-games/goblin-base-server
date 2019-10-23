@@ -14,8 +14,8 @@ module.exports = {
 const TEST_PLATFORM = require('../../lib/webMiddleware/platformPlusVersionCheck.js').PLATFORM_STANDALONE,
     TEST_VERSION = '0.0.0',
     TEST_HMAC_SECRET = 'default',
-    DEFAULT_URI_PREFIX = '/api/',
-    DEFAULT_GAMEPLAY_ROOM_URI_PREFIX = '/v0/';
+    DEFAULT_URI_PREFIX = '/api/v0/',
+    DEFAULT_GAMEPLAY_ROOM_URI_PREFIX = '/api/v0/';
 
 var async = require('async'),
     crypto = require('crypto'),
