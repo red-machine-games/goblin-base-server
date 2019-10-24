@@ -153,7 +153,7 @@ Checkout the full documentation: https://gbase.tech/doc/
 
 Discuss problems & solutions at our [Discord](https://discord.gg/CuJeNV4)
 
-Become a part of community: https://community.gbase.tech/
+Submit tickets if something wrong
 
 # Security bugs & vulnerabilities
 Please don't post an information about vulnerabilities in public issues. Email us at security@gbase.tech instead.
