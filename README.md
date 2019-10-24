@@ -115,6 +115,8 @@ FunctionResponse({ success: true });    // Report success
 ```
 Head to the doc to find out more: https://gbase.tech/doc/api/cloudFunctions/
 
+Check out full getting started doc here: https://gbase.tech/doc/gettingStarted/
+
 ## Deploy on Digital Ocean
 Instance of Goblin Base Server can be easily deployed from Digital Ocean's marketplace: [Stay tuned](https://www.digitalocean.com/)
 
