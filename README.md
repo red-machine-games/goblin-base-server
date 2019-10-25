@@ -118,7 +118,7 @@ Head to the doc to find out more: https://gbase.tech/doc/api/cloudFunctions/
 Check out full getting started doc here: https://gbase.tech/doc/gettingStarted/
 
 ## Deploy on Digital Ocean
-Instance of Goblin Base Server can be easily deployed from Digital Ocean's marketplace: [Stay tuned](https://www.digitalocean.com/)
+It's super easy to up & run a virtual machine with the Server on it. Find out how to do it from [This blog post](https://blog.gbase.tech/blogs/engineering/20191025-up-and-running-goblin-base-server-and-digitalocean/)
 
 ## Working from client
 To make work with the Server easy enough to not mess with networking and backend infrastructure stuff we keep client-side SDKs that incapsulates as much complicated things as possible:
