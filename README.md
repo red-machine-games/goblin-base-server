@@ -4,7 +4,7 @@
 </p>
 
 <p align="center">
-  Goblin Base Server is an open source backend based on Node.js, Redis and MongoDB made for game/web/apps developers. It's scalable enough to cover thousands of requests per second, tens of thousands DAU, and provide comfortable realtime multiplayer for growing player base.
+  Goblin Base Server is an open-source backend based on Node.js, Redis and MongoDB made for game/web/apps developers. It's scalable enough to cover thousands of requests per second, tens of thousands DAU, and provide a comfortable realtime multiplayer for a growing player base.
 </p>
 
 ---
@@ -16,11 +16,11 @@
 
 Here are some theses to help you understand Goblin Base Server better:
  - It protects requests with HMAC sign;
- - It keeps no state in app memory instead the state splitted between 7 Redis instances. So you can scale your cluster up & down far away;
- - Realtime pvp is decoupled into separate nodes cluster - a rooms farm. Each room represents horizontal Node.js cluster with any amount of apps coupled with separate Redis instance;
- - A matchmaking mechanism selects the most free room for pair. You can scale rooms farm up & down adding or removing rooms, tuning their capacity to find ideal balance between perfomance and size of the cluster;
+ - It keeps no state in app memory instead the state split between 7 Redis instances. So you can scale your cluster up & down far away;
+ - Realtime PvP is decoupled into separate nodes cluster - a rooms farm. Each room represents a horizontal Node.js cluster with any amount of apps coupled with separate Redis instance;
+ - A matchmaking mechanism selects the freest room for pair. You can scale rooms farm up & down adding or removing rooms, tuning their capacity to find an ideal balance between performance and size of the cluster;
  - It implements Cloud Functions with rich API: read/write profiles data, leaderboards, in-app purchases, matchmaking and PvP, simple PvE. Cloud Functions implements the idea of solving hard problems with casual JavaScript;
- - It implements its own Transactions mechanism so doesn't need to work with database with Transactions functionality;
+ - It implements its Transactions mechanism so doesn't need to work with a database with Transactions functionality;
  - Goblin Base Server work in conjunction with client-side SDKs to make networking maximum casual and to fence out developer from complicated backend-side engineering;
  - Integrates with social networks.
 
@@ -30,26 +30,26 @@ Find out more here: https://gbase.tech/
 Right now Goblin Tech Stack is in alpha version (early access) and not feature-complete - some strings here will be noted as (WIP). Check out our roadmap to discover interesting things: https://github.com/orgs/red-machine-games/projects/1
 
 # What is Goblin Tech Stack
-It's a set of tools: a Server, a set of client SDKs (WIP), a clustered benchmark tool and deployment & cluster orchestration & any dev ops tool (WIP). In conjunction they form a rich stack to make & operate high load clouds and get hard problems done with casual javascript.
+It's a set of tools: a Server, a set of client SDKs (WIP), a clustered benchmark tool and deployment & cluster orchestration & any DevOps tool (WIP). In conjunction, they form a rich stack to make & operate high load clouds and get hard problems done with casual javascript.
 
 # Features overview:
  - Accounts & profiles - to login and store schemaless data;
  - Leaderboards;
  - Matchmaking - for searching other players(users);
- - PvE & PvP - a comprehensive engine to develop realtime multiplayer easily (you will never mess with `sockets` any more);
- - Social networks integrations(WIP) - Facebook, VK.com, OK.ru and many more incoming;
+ - PvE & PvP - a comprehensive engine to develop realtime multiplayer easily (you will never mess with `sockets` anymore);
+ - Social networks integrations(WIP) - Facebook, VK.com, OK.ru and much more incoming;
  - Cloud Functions & authoritarian modes - to develop server-side logic easily and make games and apps fully authoritarian;
  - Grouping and Chats(WIP) - a rich API to group players, organize chat rooms or tête-à-tête.
 
 # Getting started
-To make it work you need Node.js, Redis and MongoDB of latest versions. We will start from running it locally and then move to instant cloud deployments.
+To make it work you need Node.js, Redis and MongoDB of the latest versions. We will start by running it locally and then move to instant cloud deployments.
 
 ## Running Goblin Base Server locally
 To begin you need to install and run [Node.js](https://nodejs.org/en/), [Redis](https://redis.io/) and [MongoDB](https://www.mongodb.com/) of latest versions.
 
 Note: if you use Windows - try this: https://github.com/microsoftarchive/redis/releases or just order a cloud instance for free: https://redislabs.com/redis-enterprise-cloud/essentials-pricing/.
 
-Goblin Base Server delivered as an usual module that you should require. First of all create a new Node.js empty project with `npm init`, then install the Server: `npm install --save goblin-base-server`. All API presented as `GoblinBase` instance:
+Goblin Base Server delivered as a usual module that you should require. First of all create a new Node.js empty project with `npm init`, then install the Server: `npm install --save goblin-base-server`. All API presented as `GoblinBase` instance:
 ```javascript
 goblinBase = GoblinBase.getGoblinBase()
 
@@ -83,7 +83,7 @@ goblinBase = GoblinBase.getGoblinBase()
 Note: databases are configured with default values.
 Check out a bootstrap project with Goblin Base Server configured by default: https://github.com/red-machine-games/goblin-base-server-bootstrap
 
-Now run the code - you should see GoblinBaseServer logo in console and "Goblin Base Server run" phrase.
+Now run the code - you should see GoblinBaseServer logo in the console and "Goblin Base Server run" phrase.
 
 ## An example of Cloud Function
 ```javascript
@@ -115,28 +115,29 @@ FunctionResponse({ success: true });    // Report success
 ```
 Head to the doc to find out more: https://gbase.tech/doc/api/cloudFunctions/
 
-Check out full getting started doc here: https://gbase.tech/doc/gettingStarted/
+Check out the full getting started doc here: https://gbase.tech/doc/gettingStarted/
 
 ## Deploy on Digital Ocean
 It's super easy to up & run a virtual machine with the Server on it. Find out how to do it from [This blog post](https://blog.gbase.tech/blogs/engineering/20191025-up-and-running-goblin-base-server-and-digitalocean/)
 
 ## Working from client
-To make work with the Server easy enough to not mess with networking and backend infrastructure stuff we keep client-side SDKs that incapsulates as much complicated things as possible:
+To make work with the Server easy enough to not mess with networking and backend infrastructure stuff we keep client-side SDKs that incapsulates as many complicated things as possible:
  - JS SDK: https://github.com/red-machine-games/goblin-javascript-asset
  - Unity SDK: https://github.com/red-machine-games/goblin-unity3d-asset (on very WIP stage)
-		Head to the links to find out more.
+
+Head to the links to find out more.
 
 # Scalability
-As a Node.js app Goblin Base Server can be ran as a single-thread with Redis and MongoDB in localhost but it designed to scale as cluster as well. Logically we can split cluster into two parts: main web app - for http API, meta features, etc. and farm of pvp rooms - instances carrying multiplayer pairs and crowds(crowds are WIP).
+As a Node.js app Goblin Base Server can be run as a single-thread with Redis and MongoDB in localhost but it designed to scale as a cluster as well. Logically we can split cluster into two parts: main web app - for http API, meta features, etc. and farm of PvP rooms - instances carrying multiplayer pairs and crowds(crowds are WIP).
 
 Here are some theses to help you understand Goblin Base Server's scalability:
  - All Node.js apps are state-free while holding state into Redis. Main web app connected with 7 Redis instances(or it can be the same instance but with different `db` option);
- - Main web app and pvp rooms farm communicating through `Matchmaking Redis`;
- - Every single pvp room is designed as the same hierarchy as main web app - N running Node.js instances orchestrated by single Redis instance, every single pvp room has it's own orchestrating Redis;
- - There is no balancing between pvp rooms and they doesn't interract with each other - by matchmaking player(user) gets an address of the most uncrowded pvp room and connects directly;
+ - Main web app and PvP rooms farm communicating through `Matchmaking Redis`;
+ - Every single PvP room is designed as the same hierarchy as the main web app - N running Node.js instances orchestrated by single Redis instance, every single PvP room has it's own orchestrating Redis;
+ - There is no balancing between PvP rooms and they don't interact with each other - by matchmaking player(user) gets an address of the most uncrowded PvP room and connects directly;P
  - All Node.js instances are connected with the one MongoDB instance (separated connection for atomic acts is WIP).
- - To scale Goblin Base Server horizontally first of all you should add more main web apps - add more cores or physical hosts, secondly - scale MongoDB, thirdly add more pvp rooms to meet higher capacity. Try to tune `capacity to rooms count` ratio to balance between comfortable event loop lag and players capacity, add more cores/hosts/Node.js apps inside single pvp room to increase workforce and reduce event loop lag.
- - Redis is the most perfomant in this band hence 1-7 single-threaded Redis instances will be enough for a few thousands of RPS.
+ - To scale Goblin Base Server horizontally, first of all, you should add more main web apps - add more cores or physical hosts, secondly - scale MongoDB, thirdly add more PvP rooms to meet higher capacity. Try to tune `capacity to rooms count` ratio to balance between comfortable event loop lag and players capacity, add more cores/hosts/Node.js apps inside a single PvP room to increase workforce and reduce event loop lag.
+ - Redis is the most performant in this band hence 1-7 single-threaded Redis instances will be enough for a few thousands of RPS.
 
 <p align="center">
     <img alt="Goblin Base Server" src="https://gbase-public-static.ams3.cdn.digitaloceanspaces.com/goblin-base-server-diagram-2.png">
@@ -144,21 +145,21 @@ Here are some theses to help you understand Goblin Base Server's scalability:
 </p>
 
 # Benchmarking
-Before going public it's a good idea to simulate future workloads. Do you plan marketing campaign? How much DAU do you plan? Maybe 100k? It's already ~3000 CCU and at least 1000 requests per second or 1000 websocket connections. To benchmark your backend you can use [Goblin Base Benchmark](https://github.com/red-machine-games/goblin-base-benchmark/): it runs on plain javascript scenario and fully distributed.
+Before going public it's a good idea to simulate future workloads. Do you plan a marketing campaign? How much DAU do you plan? Maybe 100k? It's already ~3000 CCU and at least 1000 requests per second or 1000 websocket connections. To benchmark your backend you can use [Goblin Base Benchmark](https://github.com/red-machine-games/goblin-base-benchmark/): it runs on plain javascript scenario and fully distributed.
 
-It means that you can run one scenario on N machines with M cores got `N * M` workers simulating workload.
+It means that you can run one scenario on N machines with M cores got `N * M` workers simulating a workload.
 
-Also we can run benchmarks with any numbers in the cloud for you. Contact us to find out more: hello@gbase.tech
+Also, we can run benchmarks with any numbers in the cloud for you. Contact us to find out more: hello@gbase.tech
 
 # Further moves
-Checkout the full documentation: https://gbase.tech/doc/
+Check out the full documentation: https://gbase.tech/doc/
 
 Discuss problems & solutions at our [Discord](https://discord.gg/CuJeNV4)
 
 Submit tickets if something wrong
 
 # Security bugs & vulnerabilities
-Please don't post an information about vulnerabilities in public issues. Email us at security@gbase.tech instead.
+Please don't post information about vulnerabilities in public issues. Email us at security@gbase.tech instead.
 
 # Managed cloud & Premium support
 We offer Goblin Cloud Server - a version with cloud-only features and fully automated DevOps. It means that:
@@ -173,7 +174,7 @@ We offer Goblin Cloud Server - a version with cloud-only features and fully auto
 - A subdomain with SSL;
 - Static files hosting.
 
-Also you'll be able to operate Goblin Cloud instance from browser(WIP):
+Also, you'll be able to operate Goblin Cloud instance from the browser(WIP):
 - Seamlessly upload Cloud Functions;
 - See live metrics;
 - Developer console to operate everything via Cloud Function on-fly.
