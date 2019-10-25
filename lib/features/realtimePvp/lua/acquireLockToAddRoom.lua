@@ -1,4 +1,4 @@
-local N = 10000
+local N = 3000
 
 local the_lock = redis.call('get', 'add_room_lock')
 
