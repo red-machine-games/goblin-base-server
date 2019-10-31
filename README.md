@@ -192,4 +192,4 @@ Contact us: hello@gbase.tech
 
 # LICENSE
 
-GNU GPLv3
+MIT

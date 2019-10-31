@@ -1,6 +1,6 @@
 {
   "name": "goblin-base-server",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "Goblin Base Server",
   "main": "index.js",
   "scripts": {
@@ -11,7 +11,7 @@
     "url": "https://github.com/red-machine-games/goblin-base-server/issues"
   },
   "homepage": "https://gbase.tech/",
-  "license": "GNU GPLv3",
+  "license": "MIT",
   "engines": {
     "node": ">=9.11.1"
   },
