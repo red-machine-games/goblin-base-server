@@ -63,8 +63,6 @@ describe('The case', () => {
                     expect(response.statusCode).to.equal(200);
 
                     expect(body).to.have.property('unicorn');
-
-                    expect(body).to.have.property('unicorn');
                     expect(body).to.have.property('gClientId');
                     expect(body).to.have.property('gClientSecret');
 

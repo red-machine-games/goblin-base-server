@@ -259,26 +259,26 @@ describe('Authoritarian matchmaking, onMatchmaking cloud function contract', () 
 describe('Pvp paused ping message contract', () => {
     require('./pvpPausedPingMessage-contract');
 });
+describe('Issue: All pvp player should get updates with ws and both should get c: 4 message', () => {
+    require('./issue_189');
+});
+describe('Issue: Maybe problems with PVP matchmaking? (NOPE)', () => {
+    require('./issue_191');
+});
+describe('Issue: Custom function\'s checkPvpNoSearch return "searching" all the time (not good)', () => {
+    require('./issue_201');
+});
+describe('Issue : Weird timeout on pvp opponent search after 1 ms', () => {
+    require('./issue_202');
+});
+describe('Public access for leaders', () => {
+    require('./tvx_cubecats_issue_6.js');
+});
+describe('Strange custom g-data auth', () => {
+    require('./tvx_cubecats_issue_7.js');
+});
 
 // TODO And many more test contracts to move
-// describe('Issue #189: all pvp player should get updates with ws and both should get c: 4 message', () => {
-//     require('./issue_189.js');
-// });
-// describe('Issue #191: Maybe problems with PVP matchmaking? (NOPE)', () => {
-//     require('./issue_191.js');
-// });
-// describe('Issue #201: Custom function\'s checkPvpNoSearch return "searching" all the time wtf', () => {
-//     require('./issue_201.js');
-// });
-// describe('Issue #202: Weird timeout on pvp opponent search after 1 ms', () => {
-//     require('./issue_202.js');
-// });
-// describe('TVX Cubecats Issue #6: Public access for leaders', () => {
-//     require('./tvx_cubecats_issue_6.js');
-// });
-// describe('TVX Cubecats Issue #7: Strange custom g-data auth', () => {
-//     require('./tvx_cubecats_issue_7.js');
-// });
 // describe('Pvp room onDisconnected handler', () => {
 //     require('./pvpDisconnectionHandler-contract.js');
 // });

@@ -75,8 +75,6 @@ describe('The cases', () => {
                     expect(response.statusCode).to.equal(200);
 
                     expect(body).to.have.property('unicorn');
-
-                    expect(body).to.have.property('unicorn');
                     expect(body).to.have.property('gClientId');
                     expect(body).to.have.property('gClientSecret');
 
@@ -292,8 +290,6 @@ describe('The cases', () => {
                 let callbackFn = (err, response, body, _unicorn) => {
                     expect(err).to.be.equal(null);
                     expect(response.statusCode).to.equal(200);
-
-                    expect(body).to.have.property('unicorn');
 
                     expect(body).to.have.property('unicorn');
                     expect(body).to.have.property('gClientId');
@@ -543,8 +539,6 @@ describe('The cases', () => {
                 let callbackFn = (err, response, body, _unicorn) => {
                     expect(err).to.be.equal(null);
                     expect(response.statusCode).to.equal(200);
-
-                    expect(body).to.have.property('unicorn');
 
                     expect(body).to.have.property('unicorn');
                     expect(body).to.have.property('gClientId');
@@ -810,8 +804,6 @@ describe('The cases', () => {
                 let callbackFn = (err, response, body, _unicorn) => {
                     expect(err).to.be.equal(null);
                     expect(response.statusCode).to.equal(200);
-
-                    expect(body).to.have.property('unicorn');
 
                     expect(body).to.have.property('unicorn');
                     expect(body).to.have.property('gClientId');
@@ -2059,8 +2051,6 @@ describe('The cases', () => {
                 let callbackFn = (err, response, body, _unicorn) => {
                     expect(err).to.be.equal(null);
                     expect(response.statusCode).to.equal(200);
-
-                    expect(body).to.have.property('unicorn');
 
                     expect(body).to.have.property('unicorn');
                     expect(body).to.have.property('gClientId');
