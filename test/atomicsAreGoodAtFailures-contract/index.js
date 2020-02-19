@@ -12,8 +12,8 @@ var opClients = require('../../lib/operativeSubsystem/opClients.js'),
 var Account = require('../../lib/persistenceSubsystem/dao/account.js'),
     Receipt = require('../../lib/persistenceSubsystem/dao/receipt.js');
 
-const START_AT_HOST = require('../testEntryPoint.js').START_AT_HOST,
-    START_AT_PORT = require('../testEntryPoint.js').START_AT_PORT;
+const START_AT_HOST = require('../!testEntryPoint.js').START_AT_HOST,
+    START_AT_PORT = require('../!testEntryPoint.js').START_AT_PORT;
 
 var ErrorResponse = require('../../lib/objects/ErrorResponse.js');
 

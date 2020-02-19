@@ -277,35 +277,41 @@ describe('Public access for leaders', () => {
 describe('Strange custom g-data auth', () => {
     require('./tvx_cubecats_issue_7.js');
 });
+describe('Pvp room onDisconnected handler', () => {
+    require('./pvpDisconnectionHandler-contract');
+});
+describe('Issue : Maybe something with locking? (NOPE)', () => {
+    require('./issue_256');
+});
+describe('Issue : Check custom pvpGeneratePayload function', () => {
+    require('./issue_259');
+});
+describe('Issue : Objects in the profile instead of arrays', () => {
+    require('./issue_261');
+});
+describe('Issue : problems with pvp.checkBattleNoSearch ?', () => {
+    require('./issue_269');
+});
+describe('Issue : linkFbProfile bug', () => {
+    require('./issue_274.js');
+});
+describe('Issue : new Fb link bug', () => {
+    require('./issue_276.js');
+});
+describe('Issue : Something\'s with matchmaking', () => {
+    require('./issue_283.js');
+});
+
 
 // TODO And many more test contracts to move
-// describe('Pvp room onDisconnected handler', () => {
-//     require('./pvpDisconnectionHandler-contract.js');
-// });
-// describe('Issue #256: Maybe something with locking? (NOPE)', () => {
-//     require('./issue_256.js');
-// });
-// describe('Issue #259: Check custom pvpGeneratePayload function', () => {
-//     require('./issue_259.js');
-// });
-// describe('Issue #261: Objects in the profile instead of arrays', () => {
-//     require('./issue_261.js');
-// });
-// describe('Issue #269: problems with pvp.checkBattleNoSearch ?', () => {
-//     require('./issue_269.js');
-// });
-// describe('Issue #274: linkFbProfile bug', () => {
-//     require('./issue_274.js');
-// });
-// describe('Issue #276: new Fb link bug', () => {
-//     require('./issue_276.js');
-// });
-// describe('Issue #283: Da faq with matchmaking', () => {
-//     require('./issue_283.js');
-// });
-// describe('Issue #268', () => {
-//     require('./issue_268');
-// });
+
+
+
+
+
+
+
+
 // describe('Issue #290', () => {
 //     require('./issue_290.js');
 // });

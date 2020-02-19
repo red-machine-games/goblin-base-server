@@ -8,8 +8,8 @@ var expect = require('chai').expect,
 var opClients = require('../lib/operativeSubsystem/opClients.js'),
     testUtils = require('./utils/testUtils.js');
 
-const VK_TEST_CLIENT_ID = require('./testEntryPoint.js').VK_TEST_CLIENT_ID,
-    VK_TEST_CLIENT_SECRET = require('./testEntryPoint.js').VK_TEST_CLIENT_SECRET;
+const VK_TEST_CLIENT_ID = require('./!testEntryPoint.js').VK_TEST_CLIENT_ID,
+    VK_TEST_CLIENT_SECRET = require('./!testEntryPoint.js').VK_TEST_CLIENT_SECRET;
 
 var ErrorResponse = require('../lib/objects/ErrorResponse.js');
 

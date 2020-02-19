@@ -7,8 +7,8 @@ var _ = require('lodash'),
 var opClients = require('../lib/operativeSubsystem/opClients.js'),
     testUtils = require('./utils/testUtils.js');
 
-const START_AT_HOST = require('./testEntryPoint.js').START_AT_HOST,
-    START_AT_PORT = require('./testEntryPoint.js').START_AT_PORT;
+const START_AT_HOST = require('./!testEntryPoint.js').START_AT_HOST,
+    START_AT_PORT = require('./!testEntryPoint.js').START_AT_PORT;
 
 var ticketLifeTime;
 

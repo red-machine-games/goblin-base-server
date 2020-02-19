@@ -1,0 +1,1 @@
+CreateNewProfileResponse({ profileData: { museum: ['scratch', 'stress'], budge: resources.someTestResources } });

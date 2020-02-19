@@ -1,0 +1,1 @@
+PvpResponse((args.theModel.model.plrAsq === 15 || args.theModel.model.plrBsq === 15) ? { gameIsOver: true } : null);

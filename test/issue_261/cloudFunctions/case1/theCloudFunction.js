@@ -1,0 +1,1 @@
+FunctionResponse({ profileData: await getProfileNode('profileData') });
