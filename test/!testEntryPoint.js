@@ -89,7 +89,10 @@ describe('Run Goblin Base Server', () => {
             .includeAuthoritarian()
             .includeMobileReceiptValidation()
             .addGooglePlayCredentials(new GoblinBase.GooglePlayCredentials().serviceAccount('abc', '123', 'com.vegetation.glance'))
-            .includeCloudFunctions({ enableSetTimeout: true, allowToPushInitContext: true, resources: { balance: { hello: 'world' } } })
+            .includeCloudFunctions({
+                enableSetTimeout: true, allowToPushInitContext: true,
+                resources: { balance: { hello: 'world' }, someTestResources: { vegetation: [{ content: 'aspect' }, { defendant: 'freeze' }, { indirect: 'default' }] } }
+            })
             .requireAsCloudFunction('./defaultCloudFunctions/pvpAutoCloseHandler.js')
             .requireAsCloudFunction('./defaultCloudFunctions/pvpCheckGameOver.js')
             .requireAsCloudFunction('./defaultCloudFunctions/pvpConnectionHandler.js')
@@ -138,22 +141,22 @@ describe('Test gameroom', () => {
 describe('Test pvp player versus self', () => {
     require('./playerVersusBot-contract.js');
 });
-describe('Issue: floating OP Error on setReady', () => {
+describe('Issue : floating OP Error on setReady', () => {
     require('./issue_94.js');
 });
-describe('Issue: multiple acceptMatch and 315 OP Error', () => {
+describe('Issue : multiple acceptMatch and 315 OP Error', () => {
     require('./issue_92.js');
 });
-describe('Issue: weird case with 358 OP Error', () => {
+describe('Issue : weird case with 358 OP Error', () => {
     require('./issue_95.js');
 });
-describe('Issue: switch websocket message listener on model established', () => {
+describe('Issue : switch websocket message listener on model established', () => {
     require('./issue_107.js');
 });
-describe('Issue: test Redis possible leaks (additional quality test)', () => {
+describe('Issue : test Redis possible leaks (additional quality test)', () => {
     require('./issue_108.js');
 });
-describe('Issue: bad behavior of matchmaking when has players with same records', () => {
+describe('Issue : bad behavior of matchmaking when has players with same records', () => {
     require('./issue_84.js');
 });
 describe('Check: No multiple sessions on one account', () => {
@@ -192,7 +195,7 @@ describe('Test pingSession', () => {
 describe('matchmaking cloud functions and initialization context', () => {
     require('./matchmakingCloudFunctionsAndInitContext-contract');
 });
-describe('Issue: 658 Get or create profile first (actually not an issue)', () => {
+describe('Issue : 658 Get or create profile first (actually not an issue)', () => {
     require('./issue_170.js');
 });
 describe('Lets check that atomics are good at outer ops failures', () => {
@@ -241,10 +244,10 @@ describe('onGetProfile cloud function', () => {
 describe('Limited life of records', () => {
     require('./issue_212.js');
 });
-describe('Issue: Maybe redis memory leak on matchmaking (PVP ROOM FOR REAL)', () => {
+describe('Issue : Maybe redis memory leak on matchmaking (PVP ROOM FOR REAL)', () => {
     require('./issue_267');
 });
-describe('Issue: gameroom "the_occupation" is leaking', () => {
+describe('Issue : gameroom "the_occupation" is leaking', () => {
     require('./issue_270');
 });
 describe('Gameplay websocket message direct resend contract', () => {
@@ -259,13 +262,13 @@ describe('Authoritarian matchmaking, onMatchmaking cloud function contract', () 
 describe('Pvp paused ping message contract', () => {
     require('./pvpPausedPingMessage-contract');
 });
-describe('Issue: All pvp player should get updates with ws and both should get c: 4 message', () => {
+describe('Issue : All pvp player should get updates with ws and both should get c: 4 message', () => {
     require('./issue_189');
 });
-describe('Issue: Maybe problems with PVP matchmaking? (NOPE)', () => {
+describe('Issue : Maybe problems with PVP matchmaking? (NOPE)', () => {
     require('./issue_191');
 });
-describe('Issue: Custom function\'s checkPvpNoSearch return "searching" all the time (not good)', () => {
+describe('Issue : Custom function\'s checkPvpNoSearch return "searching" all the time (not good)', () => {
     require('./issue_201');
 });
 describe('Issue : Weird timeout on pvp opponent search after 1 ms', () => {
@@ -301,23 +304,12 @@ describe('Issue : new Fb link bug', () => {
 describe('Issue : Something\'s with matchmaking', () => {
     require('./issue_283.js');
 });
-
-
-// TODO And many more test contracts to move
-
-
-
-
-
-
-
-
-// describe('Issue #290', () => {
-//     require('./issue_290.js');
-// });
-// describe('Issue #291 (Not confirmed)', () => {
-//     require('./issue_291.js');
-// });
+describe('Issue : Consuming VK/OK inapps', () => {
+    require('./issue_290.js');
+});
+describe('Issue : bug with inapps (Not confirmed)', () => {
+    require('./issue_291.js');
+});
 
 describe('Test that all indexes are good (Stress-testing indexes by fact)', () => {
     require('./goodIndexes-contract.js');

@@ -464,7 +464,7 @@ describe('The case', () => {
             });
             wsConnection1.on('close', () => done(new Error('WTF 3')));
 
-            wsConnection2 = new WebSocket(`ws://${gameroomAddress}/?bkey=${bookingKey2}&pv=${PLATFORM}`);
+            wsConnection2 = new WebSocket(`ws://${gameroomHost}:${gameroomPort}/?bkey=${bookingKey2}&pv=${_PLATFORM_VERSION}`);
 
             wsConnection2.on('error', err => done(err));
             wsConnection2.on('open', () => {
@@ -609,7 +609,7 @@ describe('The case', () => {
             });
             wsConnection2.on('close', () => done(new Error('WTF 3')));
 
-            wsConnection1 = new WebSocket(`ws://${gameroomAddress}/?bkey=${bookingKey1}&pv=${PLATFORM}`);
+            wsConnection1 = new WebSocket(`ws://${gameroomHost}:${gameroomPort}/?bkey=${bookingKey1}&pv=${_PLATFORM_VERSION}`);
 
             wsConnection1.on('error', err => done(err));
             wsConnection1.on('open', () => {

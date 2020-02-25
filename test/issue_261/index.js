@@ -1,9 +1,7 @@
 'use strict';
 
 var expect = require('chai').expect,
-    _ = require('lodash'),
-    async = require('async'),
-    WebSocket = require('ws');
+    async = require('async');
 
 var goblinBase = require('../../index.js').getGoblinBase();
 
@@ -26,8 +24,6 @@ describe('Before stuff', () => {
     });
 });
 describe('The case', () => {
-    const _PLATFORM_VERSION = 'ios;0.0.2';
-
     describe('The cases', () => {
         var unicorn, gClientId, gClientSecret;
 
@@ -41,8 +37,8 @@ describe('The case', () => {
 
             it('Should push createNewProfile and theCloudFunction cloud functions', done => {
                 goblinBase
-                    .requireAsCloudFunction('./cloudFunctions/createNewProfile.js')
-                    .requireAsCloudFunction('./cloudFunctions/theCloudFunction.js')
+                    .requireAsCloudFunction('./cloudFunctions/case1/createNewProfile.js')
+                    .requireAsCloudFunction('./cloudFunctions/case1/theCloudFunction.js')
                     ._reinitCloudFunctions(done);
             });
             it(`Should create new account`, done => {
@@ -76,7 +72,7 @@ describe('The case', () => {
                 testUtils.theGet(START_AT_HOST, START_AT_PORT, 'profile.createProfile', null, unicorn, callbackFn);
             });
             it('Should call theCloudFunction', done => {
-                let callbackFn = (err, response) => {
+                let callbackFn = (err, response, body) => {
                     expect(err).to.be.equal(null);
                     expect(response.statusCode).to.equal(200);
 
@@ -88,7 +84,7 @@ describe('The case', () => {
                     done();
                 };
 
-                testUtils.theGet(START_AT_HOST, START_AT_PORT, 'act.theCloudFunction', null, unicorn, callbackFn, _PLATFORM_VERSION);
+                testUtils.theGet(START_AT_HOST, START_AT_PORT, 'act.theCloudFunction', null, unicorn, callbackFn);
             });
         });
         describe('Case #2', () => {
@@ -101,9 +97,9 @@ describe('The case', () => {
 
             it('Should push initContext, createNewProfile and theCloudFunction cloud functions', done => {
                 goblinBase
-                    .requireAsCloudFunction('./cloudFunctions/initContext.js')
-                    .requireAsCloudFunction('./cloudFunctions/createNewProfile.js')
-                    .requireAsCloudFunction('./cloudFunctions/theCloudFunction.js')
+                    .requireAsCloudFunction('./cloudFunctions/case2/initContext.js')
+                    .requireAsCloudFunction('./cloudFunctions/case2/createNewProfile.js')
+                    .requireAsCloudFunction('./cloudFunctions/case2/theCloudFunction.js')
                     ._reinitCloudFunctions(done);
             });
             it(`Should create new account`, done => {
@@ -137,7 +133,7 @@ describe('The case', () => {
                 testUtils.theGet(START_AT_HOST, START_AT_PORT, 'profile.createProfile', null, unicorn, callbackFn);
             });
             it('Should call theCloudFunction', done => {
-                let callbackFn = (err, response) => {
+                let callbackFn = (err, response, body) => {
                     expect(err).to.be.equal(null);
                     expect(response.statusCode).to.equal(200);
 
@@ -159,7 +155,7 @@ describe('The case', () => {
                     done();
                 };
 
-                testUtils.theGet(START_AT_HOST, START_AT_PORT, 'act.theCloudFunction', null, unicorn, callbackFn, _PLATFORM_VERSION);
+                testUtils.theGet(START_AT_HOST, START_AT_PORT, 'act.theCloudFunction', null, unicorn, callbackFn);
             });
         });
     });

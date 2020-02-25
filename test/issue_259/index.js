@@ -2,8 +2,7 @@
 
 var expect = require('chai').expect,
     _ = require('lodash'),
-    async = require('async'),
-    WebSocket = require('ws');
+    async = require('async');
 
 var goblinBase = require('../../index.js').getGoblinBase();
 
@@ -26,8 +25,6 @@ describe('Before stuff', () => {
     });
 });
 describe('The case', () => {
-    const _PLATFORM_VERSION = 'ios;0.0.2';
-
     var cachedMatchmakingStrategy;
 
     describe('The stuff', () => {

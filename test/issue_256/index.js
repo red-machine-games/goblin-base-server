@@ -1,7 +1,6 @@
 'use strict';
 
 var expect = require('chai').expect,
-    _ = require('lodash'),
     async = require('async');
 
 var goblinBase = require('../../index.js').getGoblinBase();

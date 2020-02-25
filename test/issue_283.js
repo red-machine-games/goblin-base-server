@@ -2,8 +2,7 @@
 
 var expect = require('chai').expect,
     _ = require('lodash'),
-    async = require('async'),
-    WebSocket = require('ws');
+    async = require('async');
 
 var goblinBase = require('../index.js').getGoblinBase();
 
@@ -13,12 +12,12 @@ var opClients = require('../lib/operativeSubsystem/opClients.js'),
 
 var ErrorResponse = require('../lib/objects/ErrorResponse.js');
 
-const START_AT_HOST = require('../!testEntryPoint.js').START_AT_HOST,
-    START_AT_PORT = require('../!testEntryPoint.js').START_AT_PORT;
+const START_AT_HOST = require('./!testEntryPoint.js').START_AT_HOST,
+    START_AT_PORT = require('./!testEntryPoint.js').START_AT_PORT;
 
 describe('Before stuff', () => {
     it('Should do some stuff', () => {
-        gameplayRoom = require('../../lib/features/realtimePvp/gameplayRoom.js');
+        gameplayRoom = require('../lib/features/realtimePvp/gameplayRoom.js');
     });
     it('Should do clean before run', done => {
         async.parallel([
@@ -34,25 +33,8 @@ describe('The case', () => {
         cachedMatchmakingStrategy = goblinBase.matchmakingConfig.strategy;
         goblinBase.matchmakingConfig.strategy = 'open';
     });
-    it('Should add cloud functions', done => {
-        goblinBase
-            .requireAsCloudFunction('./cloudFunctions/mmAllInOne.js')
-            .requireAsCloudFunction('./cloudFunctions/mutateProfile.js')
-            .requireAsCloudFunction('./cloudFunctions/setFictiveProfileData.js')
-            .requireAsCloudFunction('./cloudFunctions/setTheRecordsForMm.js')
-            .requireAsCloudFunction('./cloudFunctions/pvp/pvpAutoCloseHandler.js')
-            .requireAsCloudFunction('./cloudFunctions/pvp/pvpCheckGameOver.js')
-            .requireAsCloudFunction('./cloudFunctions/pvp/pvpConnectionHandler.js')
-            .requireAsCloudFunction('./cloudFunctions/pvp/pvpGameOverHandler.js')
-            .requireAsCloudFunction('./cloudFunctions/pvp/pvpGeneratePayload.js')
-            .requireAsCloudFunction('./cloudFunctions/pvp/pvpInitGameplayModel.js')
-            .requireAsCloudFunction('./cloudFunctions/pvp/pvpTurnHandler.js')
-            .requireAsCloudFunction('./cloudFunctions/setTheRecordsForMm.js')
-            ._reinitCloudFunctions(done);
-    });
 
-    var unicorns = [], gClientIds = [], gClientSecrets = [],
-        gameroomSeqs = [];
+    var unicorns = [], gClientIds = [], gClientSecrets = [];
 
     _(2).times(n => {
         it(`Should create new account #${n + 1}`, done => {
@@ -122,7 +104,7 @@ describe('The case', () => {
         };
 
         var ipAddress = gameplayRoom._getIpAddress();
-        opClients.getMatchmakingClient().updateRoomOccupation([ipAddress, 3000, '-1', roomOccupation], callbackFn);
+        opClients.getMatchmakingClient().updateRoomOccupation([ipAddress, 3000, '-1', roomOccupation + 3], callbackFn);
     });
 
     it('Both players should find each other', done => {
@@ -136,7 +118,7 @@ describe('The case', () => {
 
         var body1 = { rgs: [{ from: '-inf', to: '+inf' }] },
             body2 = { rgs: [{ from: '-inf', to: '+inf' }] };
-        async.paralle([
+        async.parallel([
             cb => testUtils.thePost(START_AT_HOST, START_AT_PORT, 'pvp.searchForOpponent', { segment: 'segma', strat: 'bylad' }, body1, unicorns[0], cb),
             cb => testUtils.thePost(START_AT_HOST, START_AT_PORT, 'pvp.searchForOpponent', { segment: 'segma', strat: 'bylad' }, body2, unicorns[1], cb)
         ], callbackFn);
@@ -175,16 +157,12 @@ describe('The case', () => {
             expect(err).to.be.equal(null);
             expect(response.statusCode).to.be.equal(400);
 
-            expect(body).to.deep.equal(new ErrorResponse(1000, 'Already in queue'));
+            expect(body).to.deep.equal(new ErrorResponse(633, 'Already in queue'));
 
             done();
         };
 
-        testUtils.thePost(
-            START_AT_HOST, START_AT_PORT, 'pvp.searchForBotOpponent',
-            { segment: 'segma', strat: 'byr' }, { rgs: [{ from: '-inf', to: '+inf' }] }, unicorns[0],
-            callbackFn
-        );
+        testUtils.theGet(START_AT_HOST, START_AT_PORT, 'pvp.handSelectOpponent', { hid: 2 }, unicorns[0], callbackFn);
     });
     it('First player should get gameroom address and booking key', done => {
         let callbackFn = (err, response, body) => {
@@ -237,18 +215,6 @@ describe('The case', () => {
     });
 });
 describe('After stuff', () => {
-    it('Should revert default cloud functions', done => {
-        goblinBase
-            .requireAsCloudFunction('../defaultCloudFunctions/pvpAutoCloseHandler.js')
-            .requireAsCloudFunction('../defaultCloudFunctions/pvpCheckGameOver.js')
-            .requireAsCloudFunction('../defaultCloudFunctions/pvpConnectionHandler.js')
-            .requireAsCloudFunction('../defaultCloudFunctions/pvpDisconnectionHandler.js')
-            .requireAsCloudFunction('../defaultCloudFunctions/pvpGameOverHandler.js')
-            .requireAsCloudFunction('../defaultCloudFunctions/pvpGeneratePayload.js')
-            .requireAsCloudFunction('../defaultCloudFunctions/pvpInitGameplayModel.js')
-            .requireAsCloudFunction('../defaultCloudFunctions/pvpTurnHandler.js')
-            ._reinitCloudFunctions(done);
-    });
     it('Should clean utils cache', () => {
         testUtils.clearCache();
     });

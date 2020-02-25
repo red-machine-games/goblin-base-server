@@ -2,14 +2,15 @@
 
 var expect = require('chai').expect,
     _ = require('lodash'),
-    async = require('async'),
-    WebSocket = require('ws');
+    async = require('async');
 
 var goblinBase = require('../../index.js').getGoblinBase();
 
 var opClients = require('../../lib/operativeSubsystem/opClients.js'),
     gameplayRoom,
     testUtils = require('../utils/testUtils.js');
+
+var Profile = require('../../lib/persistenceSubsystem/dao/profile.js');
 
 const START_AT_HOST = require('../!testEntryPoint.js').START_AT_HOST,
     START_AT_PORT = require('../!testEntryPoint.js').START_AT_PORT;
@@ -35,10 +36,10 @@ describe('The case', () => {
         });
         it('Should add cloud functions', done => {
             goblinBase
-                .requireAsCloudFunction('./cloudFunctions/mmAllInOne.js')
-                .requireAsCloudFunction('./cloudFunctions/mutateProfile.js')
-                .requireAsCloudFunction('./cloudFunctions/setFictiveProfileData.js')
-                .requireAsCloudFunction('./cloudFunctions/setTheRecordsForMm.js')
+                .requireAsCloudFunction('./cloudFunctions/createNewProfile.js')
+                .requireAsCloudFunction('./cloudFunctions/mmWithSelf.js')
+                .requireAsCloudFunction('./cloudFunctions/readProfileData.js')
+                .requireAsCloudFunction('./cloudFunctions/setSingleRecordForMm.js')
                 .requireAsCloudFunction('./cloudFunctions/pvp/pvpAutoCloseHandler.js')
                 .requireAsCloudFunction('./cloudFunctions/pvp/pvpCheckGameOver.js')
                 .requireAsCloudFunction('./cloudFunctions/pvp/pvpConnectionHandler.js')
@@ -46,7 +47,6 @@ describe('The case', () => {
                 .requireAsCloudFunction('./cloudFunctions/pvp/pvpGeneratePayload.js')
                 .requireAsCloudFunction('./cloudFunctions/pvp/pvpInitGameplayModel.js')
                 .requireAsCloudFunction('./cloudFunctions/pvp/pvpTurnHandler.js')
-                .requireAsCloudFunction('./cloudFunctions/setTheRecordsForMm.js')
                 ._reinitCloudFunctions(done);
         });
     });
@@ -346,7 +346,6 @@ describe('The case', () => {
             });
         });
     });
-
     describe('More stuff', () => {
         it('Should undo some stuff', () => {
             goblinBase.matchmakingConfig.strategy = cachedMatchmakingStrategy;

@@ -56,6 +56,7 @@ describe('The cases', () => {
 
                 done();
             };
+
             testUtils.theGet(START_AT_HOST, START_AT_PORT, 'profile.createProfile', null, unicorn1, callbackFn);
         });
         it('Should create new account 2', done => {
