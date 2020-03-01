@@ -24,7 +24,7 @@ Here are some theses to help you understand Goblin Base Server better:
  - Goblin Base Server work in conjunction with client-side SDKs to make networking maximum casual and to fence out developer from complicated backend-side engineering;
  - Integrates with social networks.
 
-Find out more here: https://gbase.tech/
+Find out more here: https://goblinserver.com/
 
 # Early access note :pencil:
 Right now Goblin Tech Stack is in alpha version (early access) and not feature-complete - some strings here will be noted as (WIP). Check out our roadmap to discover interesting things: https://github.com/orgs/red-machine-games/projects/1
@@ -113,12 +113,12 @@ setProfileNode('profileData.cards', myCards)
 
 FunctionResponse({ success: true });    // Report success
 ```
-Head to the doc to find out more: https://gbase.tech/doc/api/cloudFunctions/
+Head to the doc to find out more: https://goblinserver.com/doc/api/cloudFunctions/
 
-Check out the full getting started doc here: https://gbase.tech/doc/gettingStarted/
+Check out the full getting started doc here: https://goblinserver.com/doc/gettingStarted/
 
 ## Deploy on Digital Ocean
-It's super easy to up & run a virtual machine with the Server on it. Find out how to do it from [This blog post](https://blog.gbase.tech/blogs/engineering/20191025-up-and-running-goblin-base-server-and-digitalocean/)
+It's super easy to up & run a virtual machine with the Server on it. Find out how to do it from [This blog post](https://blog.goblinserver.com/blogs/engineering/20191025-up-and-running-goblin-base-server-and-digitalocean/)
 
 ## Working from client
 To make work with the Server easy enough to not mess with networking and backend infrastructure stuff we keep client-side SDKs that incapsulates as many complicated things as possible:
@@ -149,17 +149,17 @@ Before going public it's a good idea to simulate future workloads. Do you plan a
 
 It means that you can run one scenario on N machines with M cores got `N * M` workers simulating a workload.
 
-Also, we can run benchmarks with any numbers in the cloud for you. Contact us to find out more: hello@gbase.tech
+Also, we can run benchmarks with any numbers in the cloud for you. Contact us to find out more: hello@goblinserver.com
 
 # Further moves
-Check out the full documentation: https://gbase.tech/doc/
+Check out the full documentation: https://goblinserver.com/doc/
 
 Discuss problems & solutions at our [Discord](https://discord.gg/CuJeNV4)
 
 Submit tickets if something wrong
 
 # Security bugs & vulnerabilities
-Please don't post information about vulnerabilities in public issues. Email us at security@gbase.tech instead.
+Please don't post information about vulnerabilities in public issues. Email us at security@goblinserver.com instead.
 
 # Managed cloud & Premium support
 We offer Goblin Cloud Server - a version with cloud-only features and fully automated DevOps. It means that:
@@ -186,7 +186,7 @@ Premium support includes:
 - Private chat with developers to question us directly.
 and more.
 
-Contact us: hello@gbase.tech
+Contact us: hello@goblinserver.com
 
 ---
 
