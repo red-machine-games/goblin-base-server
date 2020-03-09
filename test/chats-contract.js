@@ -496,7 +496,8 @@ describe('The case', () => {
             });
             describe('Arguments validation', () => {
                 it('First player should try to send large message', async () => {
-                    var theMessage = [...Array(512)].map(() => (~~(Math.random() * 36)).toString(36)).join('');
+                    var theMessage = [...Array(goblinBase.chatsConfig.messageMaxSize + 1)]
+                        .map(() => (~~(Math.random() * 36)).toString(36)).join('');
 
                     var response = await testUtils.thePost(
                         START_AT_HOST, START_AT_PORT, 'chats.message', { group: 'some-group' },
