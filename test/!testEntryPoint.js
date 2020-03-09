@@ -115,7 +115,7 @@ describe('Run Goblin Base Server', () => {
             .hookLogs({ info: console.log, warn: console.log, error: console.error, fatal: console.error })
             .start(START_AT_PORT, START_AT_HOST, 'api/', done);
     });
-});
+});/*
 describe('Test utils', () => {
     require('./utils-contract.js');
 });
@@ -311,7 +311,7 @@ describe('Issue : Consuming VK/OK inapps', () => {
 });
 describe('Issue : bug with inapps (Not confirmed)', () => {
     require('./issue_291.js');
-});
+});*/
 describe('Chats', () => {
     require('./chats-contract.js');
 });

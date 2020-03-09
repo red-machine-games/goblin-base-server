@@ -248,12 +248,12 @@ describe('The case', () => {
                         expect(firstResponseBody).to.have.property('subscribed', -1);
                         expect(firstResponseBody).to.have.property('mess');
                         expect(firstResponseBody.mess).to.deep.equal([]);
-                        expect(secondResponseBody).to.deep.equal(new ErrorResponse(9999, 'Closed because of concurrent connection'));
+                        expect(secondResponseBody).to.deep.equal(new ErrorResponse(1125, 'Closed because of concurrent connection'));
                     } catch(__){
                         expect(secondResponseBody).to.have.property('subscribed', -1);
                         expect(secondResponseBody).to.have.property('mess');
                         expect(secondResponseBody.mess).to.deep.equal([]);
-                        expect(firstResponseBody).to.deep.equal(new ErrorResponse(9999, 'Closed because of concurrent connection'));
+                        expect(firstResponseBody).to.deep.equal(new ErrorResponse(1125, 'Closed because of concurrent connection'));
                     }
                 });
                 it('Should wait ~15 secs to subscriptions end', done => setTimeout(done, goblinBase.chatsConfig.subscriptionLifetime));
@@ -510,7 +510,7 @@ describe('The case', () => {
                         response.body = JSON.parse(response.body);
                     }
 
-                    expect(response.body).to.deep.equal(new ErrorResponse(9999, 'Message value has invalid size'));
+                    expect(response.body).to.deep.equal(new ErrorResponse(1105, 'Message value has invalid size'));
                 });
             });
         });
