@@ -1,6 +1,6 @@
 {
   "name": "goblin-base-server",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "description": "Goblin Base Server",
   "main": "index.js",
   "scripts": {
