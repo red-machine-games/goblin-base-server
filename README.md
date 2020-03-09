@@ -154,8 +154,6 @@ Also, we can run benchmarks with any numbers in the cloud for you. Contact us to
 # Further moves
 Check out the full documentation: https://goblinserver.com/doc/
 
-Discuss problems & solutions at our [Discord](https://discord.gg/CuJeNV4)
-
 Submit tickets if something wrong
 
 # Security bugs & vulnerabilities

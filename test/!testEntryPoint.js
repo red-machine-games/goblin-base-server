@@ -31,6 +31,7 @@ describe('Run Goblin Base Server', () => {
                 .setupServiceClient(REDIS_HOST, REDIS_PORT, { db: 5 })
                 .setupMaintenanceClient(REDIS_HOST, REDIS_PORT, { db: 6 })
                 .setupResourceLockerClient(REDIS_HOST, REDIS_PORT, { db: 7 })
+                .setupChatClient(REDIS_HOST, REDIS_PORT, { db: 8 })
             )
             .includeAccounts({ lastActionTimeout: 1000 * 2 })
             .includeProfiles()
@@ -93,6 +94,7 @@ describe('Run Goblin Base Server', () => {
                 enableSetTimeout: true, allowToPushInitContext: true,
                 resources: { balance: { hello: 'world' }, someTestResources: { vegetation: [{ content: 'aspect' }, { defendant: 'freeze' }, { indirect: 'default' }] } }
             })
+            .configChats()
             .requireAsCloudFunction('./defaultCloudFunctions/pvpAutoCloseHandler.js')
             .requireAsCloudFunction('./defaultCloudFunctions/pvpCheckGameOver.js')
             .requireAsCloudFunction('./defaultCloudFunctions/pvpConnectionHandler.js')
@@ -309,6 +311,9 @@ describe('Issue : Consuming VK/OK inapps', () => {
 });
 describe('Issue : bug with inapps (Not confirmed)', () => {
     require('./issue_291.js');
+});
+describe('Chats', () => {
+    require('./chats-contract.js');
 });
 
 describe('Test that all indexes are good (Stress-testing indexes by fact)', () => {

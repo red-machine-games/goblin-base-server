@@ -3,11 +3,13 @@ local SESSION_LIFETIME = KEYS[2]
 local CLIENT_PLATFORM = KEYS[3]
 local NOW = tonumber(KEYS[4])
 local SUBSESSION_ALSO = KEYS[5] == '1'
+local NO_SESSION_LOCK_ETC = KEYS[6] == '1'
+
 local N = 15000
 
 local sexp = redis.call('get', 'sexp:' .. UNICORN)
 
-if not sexp or tonumber(sexp) + N > NOW then
+if (not sexp or tonumber(sexp) + N > NOW) or NO_SESSION_LOCK_ETC then
     local session_platform = redis.call('hget', 'sess:' .. UNICORN, 'plat')
 
     if session_platform == CLIENT_PLATFORM then
@@ -26,11 +28,13 @@ if not sexp or tonumber(sexp) + N > NOW then
         if #sessionObj == 0 then
             return nil
         else
-            redis.call('set', 'sexp:' .. UNICORN, NOW)
-            redis.call('pexpire', 'sexp:' .. UNICORN, N)
-            redis.call('hincrby', sess_unicorn, 'rsq', '1')
+            if not NO_SESSION_LOCK_ETC then
+                redis.call('set', 'sexp:' .. UNICORN, NOW)
+                redis.call('pexpire', 'sexp:' .. UNICORN, N)
+                redis.call('hincrby', sess_unicorn, 'rsq', '1')
+                redis.call('hset', sess_unicorn, 'lact', NOW)
+            end
             redis.call('pexpire', sess_unicorn, SESSION_LIFETIME)
-            redis.call('hset', sess_unicorn, 'lact', NOW)
             local out = {}
             for i = 1, #sessionObj, 2 do
                 if sessionObj[i] == 'rsq' then

@@ -19,7 +19,7 @@ else
     if so_the_listing[1] == '0' then
         redis.call('del', 'sess_current_count', 'sess_current_count_cursor')
         redis.call('set', 'sess_current_count_block', '1', 'px', SESS_COUNTER_BLOCK_MS)
-        return '2;' .. sess_current_count
+        return '2;' .. (sess_current_count or '0')
     else
         redis.call('set', 'sess_current_count_cursor', so_the_listing[1])
         return '1'
