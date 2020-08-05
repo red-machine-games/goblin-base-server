@@ -30,7 +30,7 @@
     "express-basic-auth": "1.2.0",
     "faker": "4.1.0",
     "fast-deep-equal": "2.0.1",
-    "fastify": "2.10.0",
+    "fastify": "3.1.1",
     "fastify-cors": "2.1.3",
     "fastify-formbody": "3.1.0",
     "fastify-helmet": "3.0.2",
