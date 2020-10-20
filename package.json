@@ -46,7 +46,7 @@
     "mersennetwister": "0.2.3",
     "mongodb": "3.3.3",
     "murmurhash": "0.0.2",
-    "object-path": "0.11.4",
+    "object-path": "0.11.5",
     "pm2": "4.1.2",
     "querystring": "0.2.0",
     "redis": "2.8.0",
